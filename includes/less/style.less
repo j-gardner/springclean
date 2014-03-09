@@ -1,0 +1,95 @@
+/*
+    Theme Name: SpringClean
+    Theme URI: http://johngardner.co
+    Description: Time for a spring cleaning
+
+    Author: John Gardner
+    Author URI: http://arconixpc.com/
+
+    Version: 1.0.0
+    Template: genesis
+
+    License: GPL-2.0+
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+// Variables
+@text-size: 18px;
+@text-color: #333;
+@link: #6A8D94;
+@base: @link;
+
+@font-heading: 'Bitter', serif;
+@font-body: 'Oxygen', sans-serif;
+
+
+// Mixins & Colors
+@import "mixins/mixins.less";
+@import "mixins/colors.less";
+
+// Reset
+@import "reset.less";
+
+// Base
+@import "base.less";
+
+// Header
+@import "header.less";
+
+// Navigation
+@import "navigation.less";
+
+// Content
+@import "content.less";
+
+// Post Formats
+@import "post-formats.less";
+
+// Footer
+@import "footer.less";
+
+// Responsive
+@import "responsive.less";
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Gravity Forms
+
+
+div.gform_wrapper input,
+div.gform_wrapper select,
+div.gform_wrapper textarea {
+    box-sizing: border-box;
+    font-size: 14px !important;
+    padding: 4px 5px !important;
+}
+
+div.gform_footer input.button {
+    color: #333;
+}
+
+div.gform_wrapper .ginput_complex label {
+    font-size: 14px;
+}
+
+div.gform_wrapper li,
+div.gform_wrapper form li {
+    margin: 0 0 10px;
+}
+
+div.gform_wrapper .gform_footer {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+

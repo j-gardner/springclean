@@ -1,0 +1,69 @@
+/* Site Navigation
+---------------------------------------------------------------------------------------------------- */
+.nav-header {
+    float: right;
+}
+
+.genesis-nav-menu {
+    float: left;
+    line-height: 1;
+    margin-top: 2px;
+
+    .menu-item {
+        display: inline-block;
+    }
+
+    a {
+        color: @text-color;
+        font-family: @font-heading;
+        font-size: @text-size * .8;
+        margin-right: 15px;
+        text-transform: uppercase;
+
+        &:hover {
+            color: @base;
+        }
+    }
+
+    .current-menu-item > a {
+        color: @base;
+    }
+}
+
+
+/* Header Menu
+---------------------------------------------------------------------------------------------------- */
+.header-menu {
+    display: none;
+}
+
+#header-menu-icon {
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+/* Post Navigation
+---------------------------------------------------------------------------------------------------- */
+.navigation {
+    font-size: 14px;
+    overflow: hidden;
+    padding: 20px 0;
+    width: 100%;
+
+    li {
+        display: inline;
+    }
+
+    li {
+        a,
+        a:hover,
+        &.disabled,
+        &.active a {
+            background: @base;
+            border: 1px solid @darken2;
+            color: #f7f7f7;
+            padding: 5px 8px;
+        }
+    }
+}

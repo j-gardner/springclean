@@ -1,0 +1,53 @@
+/* Defaults
+---------------------------------------------------------------------------------------------------- */
+
+body {
+    background-color: #fff;
+    color: @text-color;
+    font-family: @font-body;
+    font-size: @text-size;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+a,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+#header-menu-icon::before {
+    -webkit-transition: all 0.2s ease-in-out;
+       -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+         -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+}
+
+::-moz-selection {
+    background-color: @base;
+    color: #fff;
+}
+
+::selection {
+    background-color: @base;
+    color: #fff;
+}
+
+a {
+    color: @base;
+    text-decoration: none;
+
+    &:hover {
+        //text-decoration: underline;
+    }
+}
+
+p {
+    margin: 0 0 28px;
+    padding: 0;
+}
+
+strong {
+    font-weight: 600;
+}
