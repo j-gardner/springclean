@@ -12,7 +12,7 @@ SpringClean uses the Genesis Framework from [StudioPress](http://studiopress.com
 
 ### Theme Setup
 
-The SpringClean theme was designed with simplicity in mind. There are two widget areas, The header-right and one in the footer.
+The SpringClean theme was designed with simplicity in mind. There is a single widget area in the header for the menu
 
 ### Support
 
