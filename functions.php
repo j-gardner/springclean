@@ -95,7 +95,14 @@ function springclean_footer_creds( $creds ) {
     return $creds;
 }
 
-
+/**
+ * Set up Post Format icons 
+ *
+ * Based on the current post format, configure the appropriate font-awesome icon
+ * 
+ * @return string
+ * @since  1.0.0
+ */
 function springclean_post_format_icons() {
 
     $url = home_url();
@@ -103,8 +110,8 @@ function springclean_post_format_icons() {
 
     switch( $format ) {
         
-        case '': // Normal posts since WP returns nothing
-        case 'standard': // If/when WP gets its act together
+        case '': // Standard posts (WP returns an empty string for the format)
+        case 'standard':
             echo '<a class="fa fa-lg fa-file-o" href="' . $url . '/type/' . $format . '"></a>';
             break;
 
