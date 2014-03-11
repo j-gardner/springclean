@@ -30,7 +30,6 @@
     }
 }
 
-
 /* Header Menu
 ---------------------------------------------------------------------------------------------------- */
 .header-menu {
@@ -42,28 +41,27 @@
     display: inline-block;
 }
 
-
-/* Post Navigation
+/* Pagination 
 ---------------------------------------------------------------------------------------------------- */
-.navigation {
-    font-size: 14px;
-    overflow: hidden;
-    padding: 20px 0;
-    width: 100%;
+.pagination {
+    margin: 40px 0;
 
-    li {
-        display: inline;
+    ul {
+        margin: 0;
+        text-align: center;
     }
 
     li {
-        a,
-        a:hover,
-        &.disabled,
-        &.active a {
-            background: @base;
-            border: 1px solid @darken2;
-            color: #f7f7f7;
+        display: inline;
+
+        a {
+            color: @text-color;
             padding: 5px 8px;
+
+            &:hover {
+                color: #fff;
+                background: @base;
+            }
         }
     }
 }

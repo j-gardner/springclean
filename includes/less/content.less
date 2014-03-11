@@ -14,12 +14,12 @@ h1 {
     font-size: 36px;
 }
 
-h2 {
-    font-size: 30px;
+h2,
+.entry-title {
+    font-size: 28px;
 }
 
-h3,
-.entry-title {
+h3 {
     font-size: 24px;
 }
 
@@ -37,8 +37,82 @@ h4,
     }
 }
 
+/* Content
+---------------------------------------------------------------------------------------------------- */
+.entry {
+    .sc_border;
+    margin-bottom: 60px;
+}
 
-/* Entry Misc
+.page .entry {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.entry-content {
+
+    .fa {
+        position: relative;
+        top: -104px;
+        left: -35px;
+    }
+    
+
+    a {
+        color: @base;
+        text-decoration: underline;
+
+        &:hover {
+            color: @darken2;
+        }
+    }
+
+    a.fa,
+    a.fa:hover {
+        padding: 0;
+        background: transparent;
+        color: @text-color;
+        text-decoration: none;
+    }
+
+    ol,
+    ul {
+        margin-bottom: 30px;
+        margin-left: 60px;
+    }
+
+    ol > li {
+        list-style-type: decimal;
+    }
+
+    ul > li {
+
+        &:before {    
+            font-family: 'FontAwesome';
+            content: '\f14a';
+            margin: 0 10px 0 -20px;
+        }
+    }
+
+    a.external {
+        color: @text-color;
+        padding: 20px 30px;
+        background: #f5f5f5;
+        text-decoration: none;
+
+        &:hover {
+            color: @base;
+        }
+
+        &:after {
+            font-family: 'FontAwesome';
+            content: '\f14c';
+            margin-left: 8px;
+        }
+    }
+}
+
+/* Content Misc
 ---------------------------------------------------------------------------------------------------- */
 .alignleft {
     float: left;
@@ -51,35 +125,18 @@ h4,
 }
 
 .archive-description {
-    border-bottom: 1px solid #f5f5f5;
+    .sc_border;
     margin-bottom: 40px;
     padding-bottom: 40px;
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
 }
-
-.archive-description p:last-child {
-    margin-bottom: 0;
-}
-
-.entry-content a {
-    color: @base;
-    text-decoration: underline;
-
-        &:hover {
-            color: @darken2;
-        }
-}
-
-
-/* Pagination 
----------------------------------------------------------------------------------------------------- */
-.pagination {
-    margin: 40px 0;
-}
-
 
 /* Images 
 ---------------------------------------------------------------------------------------------------- */
-
 img {
     max-width: 100%;
 }

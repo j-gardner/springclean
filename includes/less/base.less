@@ -1,6 +1,11 @@
+// Custom Mixin
+.sc_border( @px: 1px, @style: solid, @color: #f0f0f0 ) {
+    border-bottom: @px @style @color;
+}
+
+
 /* Defaults
 ---------------------------------------------------------------------------------------------------- */
-
 body {
     background-color: #fff;
     color: @text-color;
@@ -17,11 +22,7 @@ input[type="reset"],
 input[type="submit"],
 textarea:focus,
 #header-menu-icon::before {
-    -webkit-transition: all 0.2s ease-in-out;
-       -moz-transition: all 0.2s ease-in-out;
-        -ms-transition: all 0.2s ease-in-out;
-         -o-transition: all 0.2s ease-in-out;
-            transition: all 0.2s ease-in-out;
+    .transition;
 }
 
 ::-moz-selection {
@@ -50,4 +51,9 @@ p {
 
 strong {
     font-weight: 600;
+}
+
+.entry ul,
+.entry ol {
+    margin-left: 60px;
 }
