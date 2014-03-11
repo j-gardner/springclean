@@ -1,3 +1,5 @@
+**THIS THEME IS CURRENTLY IN DEVELOPMENT**
+
 # SpringClean
 
 Author: [John Gardner](http://arconixpc.com)
