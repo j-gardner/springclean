@@ -56,7 +56,6 @@ function springclean_post_info( $info ) {
 /**
  * Enqueue Scripts and Styles necessary for the theme
  *
- * @return null
  * @since  1.0.0
  */
 function springclean_nq() {
@@ -100,7 +99,6 @@ function springclean_footer_creds( $creds ) {
  *
  * Based on the current post format, configure the appropriate font-awesome icon
  * 
- * @return string
  * @since  1.0.0
  */
 function springclean_post_format_icons() {
