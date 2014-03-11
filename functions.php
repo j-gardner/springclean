@@ -29,13 +29,29 @@ unregister_sidebar( 'sidebar-alt' );
 add_action( 'wp_enqueue_scripts', 'springclean_nq' );
 add_action( 'genesis_entry_content', 'springclean_post_format_icons', 9 );
 remove_action( 'genesis_meta', 'genesis_load_favicon' );
+remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
 // Filters
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+add_filter( 'genesis_post_info', 'springclean_post_info' );
 add_filter( 'genesis_footer_backtotop_text', '__return_empty_string' );
 add_filter( 'genesis_footer_creds_text', 'springclean_footer_creds' );
 
 
+/**
+ * Modify the Post Info section
+ * 
+ * @param  string $info
+ * @return string
+ * @since  1.0.0
+ */
+function springclean_post_info( $info ) {
+
+    $info = '[post_date format="F jS"] [post_edit before=" | "]';
+    
+    return $info;
+
+}
 
 /**
  * Enqueue Scripts and Styles necessary for the theme
@@ -51,8 +67,8 @@ function springclean_nq() {
     // Include Google Fonts
     wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Oxygen|Bitter', false, $CHILD_THEME_VERSION );
 
-    // Include our JS menu file
-    wp_enqueue_script( 'header-menu', get_stylesheet_directory_uri() . '/includes/js/menu.js', array( 'jquery' ), $CHILD_THEME_VERSION );
+    // Include our JS file
+    wp_enqueue_script( 'header-menu', get_stylesheet_directory_uri() . '/includes/js/script.js', array( 'jquery' ), $CHILD_THEME_VERSION );
 
 }
 
@@ -65,16 +81,16 @@ function springclean_nq() {
  */
 function springclean_footer_creds( $creds ) {
 
-    $t = '<a class="fa fa-twitter" href="http://twitter.com/j_gardner"></a>';
-    $gp = '<a class="fa fa-google-plus-square" href="http://arcnx.co/gplus"></a>';
-    $fb = '<a class="fa fa-facebook" href="http://facebook.com/jgardner4"></a>';
-    $i = '<a class="fa fa-instagram" href="http://instagram.com/jgardner03"></a>';
-    $li = '<a class="fa fa-linkedin" href="http://linkedin.com/in/jgardner4"></a>';
-    $gh = '<a class="fa fa-github" href="http://arcnx.co/git"></a>';
+    $t = '<a class="fa fa-lg fa-twitter" href="http://twitter.com/j_gardner"></a>';
+    $gp = '<a class="fa fa-lg fa-google-plus-square" href="http://arcnx.co/gplus"></a>';
+    $fb = '<a class="fa fa-lg fa-facebook" href="http://facebook.com/jgardner4"></a>';
+    $i = '<a class="fa fa-lg fa-instagram" href="http://instagram.com/jgardner03"></a>';
+    $li = '<a class="fa fa-lg fa-linkedin" href="http://linkedin.com/in/jgardner4"></a>';
+    $gh = '<a class="fa fa-lg fa-github-square" href="http://arcnx.co/git"></a>';
 
-
-    $creds = '<p>[footer_copyright] <a href="' . $CHILD_URL . '">John Gardner</a> &bull; Powered by <a href="http://wordpress.org">WordPress</a> &bull; Designed by <a href="http://arcnx.co/1">Arconix Computers</a> &bull; Hosted by <a href="http://arcnx.co/ix">IX Webhosting</a> &bull; [footer_loginout]</p>';
-    $creds .= '<p>' . $t . $fb . $gp . $gh . $i . $li . '</p>';
+    $creds = '<p>' . $t . $fb . $gp . $gh . $i . $li . '</p>';
+    $creds .= '<p>[footer_copyright] <a href="' . $CHILD_URL . '">John Gardner</a> &bull; Designed by <a href="http://arconixpc.com">Arconix Computers</a> &bull; [footer_loginout]</p>';
+    
 
     return $creds;
 }
@@ -86,8 +102,9 @@ function springclean_post_format_icons() {
     $format = get_post_format();
 
     switch( $format ) {
-
-        case 'standard':
+        
+        case '': // Normal posts since WP returns nothing
+        case 'standard': // If/when WP gets its act together
             echo '<a class="fa fa-lg fa-file-o" href="' . $url . '/type/' . $format . '"></a>';
             break;
 
@@ -104,10 +121,11 @@ function springclean_post_format_icons() {
             break;
 
         case 'video':
-            echo '<a class="fa fa-lg fa-video-camera" href="' . $url . '/type/' . $format . '"></a>';
+            echo '<a class="fa fa-lg fa-youtube-play" href="' . $url . '/type/' . $format . '"></a>';
             break;
 
         default:
+            echo '<!-- ' . $format . '-->';
             break;
     }
 
