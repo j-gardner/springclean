@@ -142,16 +142,23 @@ function springclean_post_format_icons() {
  * @since  1.0.0
  */
 function springclean_tumblog_post_content() {
+    
     if ( function_exists( 'woo_tumblog_content' ) ) {
         woo_tumblog_content( $return = false ); 
     }
+    
 }
 
-
+/**
+ * Add the link URL below the entry content
+ * 
+ * @return null  return early if it's not a link format and woo_tumblog doesn't exist
+ * @since  1.0.0
+ */
 function springclean_tumblog_link() {
     $format = get_post_format();
 
-    if( $format != "link" )
+    if( $format != "link" && ! function_exists( 'woo_tumblog_content' ) ))
         return;
 
     $url = esc_url( get_post_meta( get_the_id(), 'link-url', true ) );
