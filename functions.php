@@ -28,6 +28,8 @@ unregister_sidebar( 'sidebar-alt' );
 // Actions
 add_action( 'wp_enqueue_scripts', 'springclean_nq' );
 add_action( 'genesis_entry_content', 'springclean_post_format_icons', 9 );
+add_action( 'genesis_before_entry_content', 'springclean_tumblog_post_content' );
+add_action( 'genesis_after_entry_content', 'springclean_tumblog_link' );
 remove_action( 'genesis_meta', 'genesis_load_favicon' );
 remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
@@ -95,21 +97,19 @@ function springclean_footer_creds( $creds ) {
 }
 
 /**
- * Set up Post Format icons 
- *
- * Based on the current post format, configure the appropriate font-awesome icon
+ * Set up Post Format Font Awesome icons 
  * 
  * @since  1.0.0
  */
 function springclean_post_format_icons() {
 
-    $url = home_url();
     $format = get_post_format();
+    $url = home_url();
 
     switch( $format ) {
         
         case '': // Standard posts (WP returns an empty string for the format)
-        case 'standard':
+        case 'standard': // For when WP finally fixes the format bug
             echo '<a class="fa fa-lg fa-file-o" href="' . $url . '/type/' . $format . '"></a>';
             break;
 
@@ -134,4 +134,29 @@ function springclean_post_format_icons() {
             break;
     }
 
+}
+
+/**
+ * Output WooTumblog Content
+ * 
+ * @since  1.0.0
+ */
+function springclean_tumblog_post_content() {
+    if ( function_exists( 'woo_tumblog_content' ) ) {
+        woo_tumblog_content( $return = false ); 
+    }
+}
+
+
+function springclean_tumblog_link() {
+    $format = get_post_format();
+
+    if( $format != "link" )
+        return;
+
+    $url = esc_url( get_post_meta( get_the_id(), 'link-url', true ) );
+
+    $r = '<div class="link-wrap">Continue to <a class="external" href="' . $url . '">Full Article</a></div>';
+
+    echo $r;
 }

@@ -42,6 +42,7 @@ h4,
 .entry {
     .sc_border;
     margin-bottom: 60px;
+    position: relative;
 }
 
 .page .entry {
@@ -52,8 +53,8 @@ h4,
 .entry-content {
 
     .fa {
-        position: relative;
-        top: -104px;
+        position: absolute;
+        top: 5px;
         left: -35px;
     }
     
@@ -89,25 +90,8 @@ h4,
 
         &:before {    
             font-family: 'FontAwesome';
-            content: '\f14a';
+            content: '\f00c';
             margin: 0 10px 0 -20px;
-        }
-    }
-
-    a.external {
-        color: @text-color;
-        padding: 20px 30px;
-        background: #f5f5f5;
-        text-decoration: none;
-
-        &:hover {
-            color: @base;
-        }
-
-        &:after {
-            font-family: 'FontAwesome';
-            content: '\f14c';
-            margin-left: 8px;
         }
     }
 }
