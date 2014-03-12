@@ -158,7 +158,7 @@ function springclean_tumblog_post_content() {
 function springclean_tumblog_link() {
     $format = get_post_format();
 
-    if( $format != "link" && ! function_exists( 'woo_tumblog_content' ) ))
+    if( $format != "link" && ! function_exists( 'woo_tumblog_content' ) )
         return;
 
     $url = esc_url( get_post_meta( get_the_id(), 'link-url', true ) );
