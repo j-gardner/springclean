@@ -147,9 +147,8 @@ function springclean_post_format_icons() {
  */
 function springclean_tumblog_post_content() {
     
-    if ( function_exists( 'woo_tumblog_content' ) ) {
+    if ( function_exists( 'woo_tumblog_content' ) )
         woo_tumblog_content( $return = false ); 
-    }
     
 }
 
