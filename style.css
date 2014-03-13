@@ -176,10 +176,6 @@ p {
 strong {
   font-weight: 600;
 }
-.entry ul,
-.entry ol {
-  margin-left: 60px;
-}
 /* Site Container
 ---------------------------------------------------------------------------------------------------- */
 .site-container {
@@ -334,7 +330,7 @@ h4,
 }
 .entry-content ul > li:before {
   font-family: 'FontAwesome';
-  content: '\f00c';
+  content: '\f054';
   margin: 0 10px 0 -20px;
 }
 /* Content Misc
@@ -387,11 +383,12 @@ cite:before {
 /* Post Format Link
 ---------------------------------------------------------------------------------------------------- */
 .link-wrap {
+  padding: 20px 0;
+}
+.link-wrap a.external {
   background: #f5f5f5;
   margin-bottom: 10px;
   padding: 20px 30px;
-}
-.link-wrap a.external {
   color: #333333;
   text-decoration: none;
 }
