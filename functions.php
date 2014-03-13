@@ -159,6 +159,7 @@ function springclean_tumblog_post_content() {
  * @since  1.0.0
  */
 function springclean_tumblog_link() {
+    
     $format = get_post_format();
 
     if( $format != "link" )
