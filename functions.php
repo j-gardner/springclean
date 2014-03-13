@@ -30,7 +30,7 @@ add_action( 'wp_enqueue_scripts', 'springclean_nq' );
 add_action( 'genesis_entry_content', 'springclean_post_format_icons', 9 );
 add_action( 'genesis_before_entry_content', 'springclean_tumblog_post_content' );
 add_action( 'genesis_after_entry_content', 'springclean_tumblog_link' );
-remove_action( 'genesis_meta', 'genesis_load_favicon' );
+remove_action( 'wp_head', 'genesis_load_favicon' );
 remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
 // Filters
@@ -100,8 +100,12 @@ function springclean_footer_creds( $creds ) {
  * Set up Post Format Font Awesome icons 
  * 
  * @since  1.0.0
+ * @return return early if we're on a page
  */
 function springclean_post_format_icons() {
+
+    if ( is_page() )
+        return;
 
     $format = get_post_format();
     $url = home_url();
@@ -158,7 +162,7 @@ function springclean_tumblog_post_content() {
 function springclean_tumblog_link() {
     $format = get_post_format();
 
-    if( $format != "link" && ! function_exists( 'woo_tumblog_content' ) )
+    if( $format != "link" )
         return;
 
     $url = esc_url( get_post_meta( get_the_id(), 'link-url', true ) );
