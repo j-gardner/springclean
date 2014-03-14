@@ -328,7 +328,7 @@ h4,
 .entry-content ol > li {
   list-style-type: decimal;
 }
-.entry-content ul > li:before {
+.entry-content ul.fa-ul li:before {
   font-family: 'FontAwesome';
   content: '\f054';
   margin: 0 10px 0 -20px;
@@ -355,6 +355,89 @@ h4,
 ---------------------------------------------------------------------------------------------------- */
 img {
   max-width: 100%;
+}
+/* Generic Forms
+---------------------------------------------------------------------------------------------------- */
+.search-form {
+  background-color: #f5f5f5;
+  margin-top: 40px;
+  overflow: hidden;
+  padding: 40px;
+}
+.search-form input {
+  width: 75%;
+}
+input,
+select,
+textarea {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #333333;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 20px;
+  width: 100%;
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+}
+input:focus,
+textarea:focus {
+  border: 1px solid #999;
+  outline: none;
+}
+::-moz-placeholder {
+  color: #333333;
+  opacity: 1;
+  font-weight: 400;
+}
+::-webkit-input-placeholder {
+  color: #333333;
+  font-weight: 400;
+}
+input[type="submit"] {
+  background-color: #6a8d94;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Bitter', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding: 20px;
+  text-transform: uppercase;
+  width: auto;
+}
+input:hover[type="submit"] {
+  background-color: #333333;
+  color: #fff;
+}
+/* Gravity Forms
+---------------------------------------------------------------------------------------------------- */
+div.gform_wrapper input[type="email"],
+div.gform_wrapper input[type="text"],
+div.gform_wrapper textarea,
+div.gform_wrapper .gform_footer input[type="submit"],
+div.gform_wrapper .ginput_complex label {
+  font-size: 18px;
+  padding: 20px;
+  width: 100% !important;
+}
+div.gform_wrapper input[type="text"],
+div.gform_wrapper textarea {
+  letter-spacing: 0.3px;
+}
+div.gform_wrapper .top_label .gfield_label {
+  font-weight: 600;
+}
+div.gform_wrapper .ginput_complex label {
+  padding: 0;
+}
+div.gform_wrapper li,
+div.gform_wrapper form li {
+  margin: 20px 0 0;
+}
+div.gform_wrapper .gform_footer input[type="submit"] {
+  font-size: 16px;
 }
 /* Post Format Images
 ---------------------------------------------------------------------------------------------------- */

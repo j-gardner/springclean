@@ -1,0 +1,97 @@
+/* Generic Forms
+---------------------------------------------------------------------------------------------------- */
+.search-form {
+    background-color: #f5f5f5;
+    margin-top: 40px;
+    overflow: hidden;
+    padding: 40px;
+
+    input {
+        width: 75%;
+    }
+}
+
+
+input,
+select,
+textarea {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: @text-color;
+    font-family: @font-body;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 20px;
+    width: 100%;
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+input:focus,
+textarea:focus {
+    border: 1px solid #999;
+    outline: none;
+}
+
+::-moz-placeholder {
+    color: @text-color;
+    opacity: 1;
+    font-weight: 400;
+}
+
+::-webkit-input-placeholder {
+    color: @text-color;
+    font-weight: 400;
+}
+
+input[type="submit"] {
+    background-color: @base;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: @font-heading;
+    font-size: @text-size;
+    letter-spacing: 1px;
+    padding: 20px;
+    text-transform: uppercase;
+    width: auto;
+}
+
+input:hover[type="submit"] {
+    background-color: @text-color;
+    color: #fff;
+}
+
+/* Gravity Forms
+---------------------------------------------------------------------------------------------------- */
+div.gform_wrapper input[type="email"],
+div.gform_wrapper input[type="text"],
+div.gform_wrapper textarea,
+div.gform_wrapper .gform_footer input[type="submit"],
+div.gform_wrapper .ginput_complex label {
+    font-size: 18px;
+    padding: 20px;
+    width: 100% !important;
+}
+
+div.gform_wrapper input[type="text"],
+div.gform_wrapper textarea {
+    letter-spacing: 0.3px;
+}
+
+div.gform_wrapper .top_label .gfield_label {
+    font-weight: 600;
+}
+
+div.gform_wrapper .ginput_complex label {
+    padding: 0;
+}
+
+div.gform_wrapper li,
+div.gform_wrapper form li {
+    margin: 20px 0 0;
+}
+
+div.gform_wrapper .gform_footer input[type="submit"] {
+    font-size: 16px;
+}
