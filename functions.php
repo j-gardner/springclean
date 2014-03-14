@@ -69,7 +69,7 @@ function springclean_nq() {
     wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Oxygen|Bitter', false, $CHILD_THEME_VERSION );
 
     // Include our JS file
-    wp_enqueue_script( 'header-menu', get_stylesheet_directory_uri() . '/includes/js/script.js', array( 'jquery' ), $CHILD_THEME_VERSION );
+    wp_enqueue_script( 'springclean-script', get_stylesheet_directory_uri() . '/includes/js/script.js', array( 'jquery' ), $CHILD_THEME_VERSION );
 
 }
 
