@@ -29,7 +29,7 @@ unregister_sidebar( 'sidebar-alt' );
 add_action( 'wp_enqueue_scripts', 'springclean_nq' );
 add_action( 'genesis_entry_content', 'springclean_post_format_icons', 9 );
 add_action( 'genesis_before_entry_content', 'springclean_tumblog_post_content' );
-add_action( 'genesis_after_entry_content', 'springclean_tumblog_link' );
+add_action( 'genesis_after_entry_content', 'springclean_tumblog_link', 5 );
 remove_action( 'wp_head', 'genesis_load_favicon' );
 remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
@@ -69,7 +69,7 @@ function springclean_nq() {
     wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Oxygen|Bitter', false, $CHILD_THEME_VERSION );
 
     // Include our JS file
-    wp_enqueue_script( 'springclean-script', get_stylesheet_directory_uri() . '/includes/js/script.js', array( 'jquery' ), $CHILD_THEME_VERSION );
+    wp_enqueue_script( 'springclean-js', get_stylesheet_directory_uri() . '/includes/js/script.js', array( 'jquery' ), $CHILD_THEME_VERSION );
 
 }
 
@@ -90,7 +90,7 @@ function springclean_footer_creds( $creds ) {
     $gh = '<a class="fa fa-lg fa-github-square" href="http://arcnx.co/git"></a>';
 
     $creds = '<p>' . $t . $fb . $gp . $gh . $i . $li . '</p>';
-    $creds .= '<p>[footer_copyright] <a href="' . $CHILD_URL . '">John Gardner</a> &bull; Designed by <a href="http://arconixpc.com">Arconix Computers</a> &bull; [footer_loginout]</p>';
+    $creds .= '<p>[footer_copyright] <a href="' . home_url() . '">' . get_bloginfo( 'name' ) . '</a> &bull; Designed by <a href="http://arconixpc.com">Arconix Computers</a> &bull; [footer_loginout]</p>';
     
 
     return $creds;
