@@ -64,34 +64,26 @@ input:hover[type="submit"] {
 
 /* Gravity Forms
 ---------------------------------------------------------------------------------------------------- */
-div.gform_wrapper input[type="email"],
-div.gform_wrapper input[type="text"],
-div.gform_wrapper textarea,
-div.gform_wrapper .gform_footer input[type="submit"],
-div.gform_wrapper .ginput_complex label {
-    font-size: 18px;
-    padding: 20px;
-    width: 100% !important;
-}
+.gform_wrapper {
 
-div.gform_wrapper input[type="text"],
-div.gform_wrapper textarea {
-    letter-spacing: 0.3px;
-}
+    ul.gform_fields {
+        margin-left:  0;
 
-div.gform_wrapper .top_label .gfield_label {
-    font-weight: 600;
-}
+        li {
+            list-style: none;
 
-div.gform_wrapper .ginput_complex label {
-    padding: 0;
-}
+            &.gfield {
+                margin-top: 10px;
 
-div.gform_wrapper li,
-div.gform_wrapper form li {
-    margin: 20px 0 0;
-}
+                &:before {
+                    content: "";
+                    margin: 0;
+                }
+            }
+        }
+    }
 
-div.gform_wrapper .gform_footer input[type="submit"] {
-    font-size: 16px;
+    .gfield_label {
+        font-weight: 600;
+    }
 }

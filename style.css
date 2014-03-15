@@ -328,6 +328,12 @@ h4,
 .entry-content ol > li {
   list-style-type: decimal;
 }
+.entry-content ul > li {
+  list-style: disc;
+}
+.entry-content ul.fa-ul li {
+  list-style: none;
+}
 .entry-content ul.fa-ul li:before {
   font-family: 'FontAwesome';
   content: '\f054';
@@ -413,31 +419,21 @@ input:hover[type="submit"] {
 }
 /* Gravity Forms
 ---------------------------------------------------------------------------------------------------- */
-div.gform_wrapper input[type="email"],
-div.gform_wrapper input[type="text"],
-div.gform_wrapper textarea,
-div.gform_wrapper .gform_footer input[type="submit"],
-div.gform_wrapper .ginput_complex label {
-  font-size: 18px;
-  padding: 20px;
-  width: 100% !important;
+.gform_wrapper ul.gform_fields {
+  margin-left: 0;
 }
-div.gform_wrapper input[type="text"],
-div.gform_wrapper textarea {
-  letter-spacing: 0.3px;
+.gform_wrapper ul.gform_fields li {
+  list-style: none;
 }
-div.gform_wrapper .top_label .gfield_label {
+.gform_wrapper ul.gform_fields li.gfield {
+  margin-top: 10px;
+}
+.gform_wrapper ul.gform_fields li.gfield:before {
+  content: "";
+  margin: 0;
+}
+.gform_wrapper .gfield_label {
   font-weight: 600;
-}
-div.gform_wrapper .ginput_complex label {
-  padding: 0;
-}
-div.gform_wrapper li,
-div.gform_wrapper form li {
-  margin: 20px 0 0;
-}
-div.gform_wrapper .gform_footer input[type="submit"] {
-  font-size: 16px;
 }
 /* Post Format Images
 ---------------------------------------------------------------------------------------------------- */
@@ -544,26 +540,4 @@ cite:before {
   ul.children {
     margin-left: 0;
   }
-}
-div.gform_wrapper input,
-div.gform_wrapper select,
-div.gform_wrapper textarea {
-  box-sizing: border-box;
-  font-size: 14px !important;
-  padding: 4px 5px !important;
-}
-div.gform_footer input.button {
-  color: #333;
-}
-div.gform_wrapper .ginput_complex label {
-  font-size: 14px;
-}
-div.gform_wrapper li,
-div.gform_wrapper form li {
-  margin: 0 0 10px;
-}
-div.gform_wrapper .gform_footer {
-  border: none;
-  margin: 0;
-  padding: 0;
 }

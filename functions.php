@@ -167,7 +167,7 @@ function springclean_tumblog_link() {
 
     $url = esc_url( get_post_meta( get_the_id(), 'link-url', true ) );
 
-    $r = '<div class="link-wrap">Continue to <a class="external" href="' . $url . '">Full Article</a></div>';
+    $r = '<div class="link-wrap"><a class="external" href="' . $url . '">Continue to Full Article</a></div>';
 
     echo $r;
 }
