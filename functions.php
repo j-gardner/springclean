@@ -48,11 +48,9 @@ add_filter( 'genesis_footer_creds_text', 'springclean_footer_creds' );
  * @since  1.0.0
  */
 function springclean_post_info( $info ) {
-
     $info = '[post_date format="F jS"] [post_edit before=" | "]';
     
     return $info;
-
 }
 
 /**
@@ -61,7 +59,6 @@ function springclean_post_info( $info ) {
  * @since  1.0.0
  */
 function springclean_nq() {
-
     // Include Font Awesome
     wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', false, '4.0.3' );
 
@@ -70,7 +67,6 @@ function springclean_nq() {
 
     // Include our JS file
     wp_enqueue_script( 'springclean-js', get_stylesheet_directory_uri() . '/includes/js/script.js', array( 'jquery' ), $CHILD_THEME_VERSION );
-
 }
 
 /**
@@ -81,7 +77,6 @@ function springclean_nq() {
  * @since  1.0.0
  */
 function springclean_footer_creds( $creds ) {
-
     $t = '<a class="fa fa-lg fa-twitter" href="http://twitter.com/j_gardner"></a>';
     $gp = '<a class="fa fa-lg fa-google-plus-square" href="http://arcnx.co/gplus"></a>';
     $fb = '<a class="fa fa-lg fa-facebook" href="http://facebook.com/jgardner4"></a>';
@@ -103,7 +98,6 @@ function springclean_footer_creds( $creds ) {
  * @return return early if we're on a page
  */
 function springclean_post_format_icons() {
-
     if ( is_page() )
         return;
 
@@ -137,7 +131,6 @@ function springclean_post_format_icons() {
             echo '<!-- ' . $format . '-->';
             break;
     }
-
 }
 
 /**
@@ -146,10 +139,8 @@ function springclean_post_format_icons() {
  * @since  1.0.0
  */
 function springclean_tumblog_post_content() {
-    
     if ( function_exists( 'woo_tumblog_content' ) )
         woo_tumblog_content( $return = false ); 
-    
 }
 
 /**
@@ -159,7 +150,6 @@ function springclean_tumblog_post_content() {
  * @since  1.0.0
  */
 function springclean_tumblog_link() {
-    
     $format = get_post_format();
 
     if( $format != "link" )
