@@ -495,8 +495,7 @@ cite:before {
 /* Site Footer
 ---------------------------------------------------------------------------------------------------- */
 .site-footer {
-  border-top: 1px solid #f5f5f5;
-  padding: 40px 0;
+  padding: 0 0 40px;
   text-align: center;
 }
 .site-footer p {
@@ -506,10 +505,15 @@ cite:before {
 .site-footer p:last-child {
   margin-bottom: 0;
 }
-.site-footer a.fa {
+.footer-widgets {
+  border-top: 1px solid #f5f5f5;
+  padding: 40px 0 0;
+  text-align: center;
+}
+.footer-widgets a.fa {
   padding-right: 15px;
 }
-.site-footer a.fa:last-child {
+.footer-widgets a.fa:last-child {
   padding-right: 0;
 }
 /* Media Queries
