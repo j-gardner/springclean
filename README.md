@@ -8,7 +8,7 @@ SpringClean uses the Genesis Framework from [StudioPress](http://studiopress.com
 
 ### Theme Notes
 
-The SpringClean theme was designed with simplicity in mind. There is a single widget area in the header for a menu.
+The SpringClean theme was designed with simplicity in mind. There is a widget area in the header for a menu and in the footer.
 
 The theme's CSS was constructed using [LESS](http://lesscss.org/). Those files are located in `/includes/less/`. LESS outputs standard CSS so it's use is not required to make desired design changes.
 
