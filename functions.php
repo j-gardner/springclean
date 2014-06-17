@@ -4,7 +4,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 include_once( get_stylesheet_directory() . '/includes/class-widgets.php' );
 
 // Set Child Theme info
-define( 'CHILD_THEME_VERSION', '1.0.0' );
+define( 'CHILD_THEME_VERSION', '1.1.0' );
 define( 'CHILD_THEME_NAME', 'SpringClean' );
 
 // Add Theme Supports
